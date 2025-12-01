@@ -9,6 +9,11 @@ Następnie w kodzie są pętle do trenowania, testowania i walidacji, wizualizac
 
 Dataset waży ~70MB i można go znaleźć pod linkiem: https://universe.roboflow.com/cybertech-qde01/waste-classification-q75av-awlnx
 
+Poza plikiem z kodem w repozytorium znajdują się również następujące pliki:
+- best_model.pth - zapisany model będący najlepszym checkpointem w trakcie treningu
+- final_model.pth - zapisany po treningu najlepszy model
+- training_history.png - wykresy błędu i dokładności dla setu treningowego i walidacyjnego
+
 Kod był uruchamiany przez środowisko wirtualne utworzone w następujący sposób:
 
 conda create --name namehere python=3.11
