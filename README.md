@@ -1,4 +1,4 @@
-Projekt Inteligentny Śmietnik
+# Projekt Inteligentny Śmietnik
 
 Celem projektu jest nauczenie modelu, by na podstawie zdjęć odpadów klasyfikował je do jednej z 6 klas.
 Model mógłby znaleźć zastosowanie w tzw. Inteligentnych Śmietnikach, które samodzielnie sortowałyby śmieci.
@@ -13,18 +13,6 @@ Poza plikiem z kodem w repozytorium znajdują się również następujące pliki
 - best_model.pth - zapisany model będący najlepszym checkpointem w trakcie treningu
 - final_model.pth - zapisany po treningu najlepszy model
 - training_history.png - wykresy błędu i dokładności dla setu treningowego i walidacyjnego
-
-Kod był uruchamiany przez środowisko wirtualne utworzone w następujący sposób:
-
-conda create --name namehere python=3.11
-
-i aktywowane:
-
-conda activate namehere
-
-Konieczne jest również doinstalowanie bibliotek: 
-
-pip install torch torchvision pillow tqdm
 
 Najwyższy validation loss, jaki udało się osiągnąć wynosi 85.32%, wykresy błędu oraz dokładności wyglądają następująco:
 
