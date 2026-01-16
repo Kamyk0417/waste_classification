@@ -1,23 +1,73 @@
-# Projekt Inteligentny Śmietnik
 
-Celem projektu jest nauczenie modelu, by na podstawie zdjęć odpadów klasyfikował je do jednej z 6 klas.
-Model mógłby znaleźć zastosowanie w tzw. Inteligentnych Śmietnikach, które samodzielnie sortowałyby śmieci.
+# Smart Trash Bin Project
 
-Główny kod znajduje się w pliku model.ipynb
-Są tam przygotowane datasety oraz dataloadery, gotowy do użycia prosty klasyfikator CNN oraz ResNet18.
-Następnie w kodzie są pętle do trenowania, testowania i walidacji, wizualizacja wyników uczenia modelu (ResNet) orz test dla przykłądowego obrazu
+This project aims to train a machine learning model to classify waste images into one of six categories:
 
-Dataset waży ~70MB i można go znaleźć pod linkiem: https://universe.roboflow.com/cybertech-qde01/waste-classification-q75av-awlnx
+- Cardboard
+- Glass
+- Metal
+- Paper
+- Plastic
+- Trash
 
-Poza plikiem z kodem w repozytorium znajdują się również następujące pliki:
-- best_model.pth - zapisany model będący najlepszym checkpointem w trakcie treningu
-- final_model.pth - zapisany po treningu najlepszy model
-- training_history.png - wykresy błędu i dokładności dla setu treningowego i walidacyjnego
+Such a model could be used in Smart Trash Bins that automatically sort waste.
 
-Najwyższy validation loss, jaki udało się osiągnąć wynosi 85.32%, wykresy błędu oraz dokładności wyglądają następująco:
+## Project Structure
 
-<img width="1189" height="390" alt="image" src="https://github.com/user-attachments/assets/7ebfe270-2713-4901-a4a5-7a179f78a87f" />
+- **model.ipynb**: Main Jupyter notebook containing all code for data preparation, model training, validation, and testing. Includes:
+	- Dataset and DataLoader preparation
+	- Simple CNN and ResNet18 classifiers
+	- Training, validation, and testing loops
+	- Visualization of training results
+	- Example inference on a test image
+- **best_model.pth**: Best model checkpoint saved during training
+- **final_model.pth**: Final model after training
+- **training_history.png**: Plots of loss and accuracy for training and validation sets
+- **data/**: Contains the dataset split into `train`, `valid`, and `test` folders, each with a `_classes.csv` file for labels
 
-Natomiast dla losowego obrazu z setu testowego wytrenowany model sklasyfikował go poprawnie z confidence: 91.96% 
+## Dataset
+
+The dataset (~70MB) can be downloaded from [Roboflow](https://universe.roboflow.com/cybertech-qde01/waste-classification-q75av-awlnx).
+
+Each image is labeled as one of the six classes. The CSV files in each split folder provide the mapping between filenames and classes.
+
+## How to Use
+
+1. Download the dataset and place it in the `data/` directory as structured above.
+2. Open `model.ipynb` in Jupyter Notebook or VS Code.
+3. Run the notebook cells to:
+	 - Prepare the data
+	 - Train the model (choose between simple CNN or ResNet18)
+	 - Evaluate and visualize results
+	 - Test the model on new images
+
+## Results
+
+- **Best validation accuracy achieved:** 85.32%
+- **Example test image classified correctly with confidence:** 91.96%
+- See `training_history.png` for training/validation loss and accuracy curves.
+
+<img width="600" alt="Training History" src="training_history.png" />
+
+## Requirements
+
+- Python 3.8+
+- PyTorch
+- torchvision
+- numpy
+- pandas
+- matplotlib
+- tqdm
+- PIL (Pillow)
+
+Install dependencies with:
+
+```bash
+pip install torch torchvision numpy pandas matplotlib tqdm pillow
+```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
